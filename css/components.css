@@ -1,4 +1,4 @@
-/* COMPONENT STYLES - Specific UI components */
+/* components style */
 
 /* Logo Component */
 .logo {
@@ -67,7 +67,7 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* CTA Button */
+/*Button */
 .cta-button {
     display: inline-flex;
     align-items: center;
