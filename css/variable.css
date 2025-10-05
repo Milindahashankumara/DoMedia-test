@@ -1,0 +1,59 @@
+/* CSS VARIABLES - Design system tokens */
+:root {
+    /* Color Variables */
+    --gradient-start: #4457fd;
+    --gradient-end: #63d3e3;
+    --text-color: #ffffff;
+    --logo-bg: #000000;
+    --button-border: #ffffff;
+    --overlay-color: rgba(0, 0, 0, 0.1);
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.2);
+    --shadow-heavy: rgba(0, 0, 0, 0.3);
+    
+    /* Typography Variables */
+    --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-large: 18px;
+    --font-size-h1: 64px;
+    --font-size-h2: 32px;
+    --font-size-h3: 40px;
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --line-height-base: 1.6;
+    --line-height-heading: 1.2;
+    
+    /* Spacing Variables */
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 20px;
+    --spacing-xl: 30px;
+    --spacing-xxl: 40px;
+    --spacing-xxxl: 60px;
+    
+    /* Layout Variables */
+    --container-max-width: 1400px;
+    --border-radius-small: 8px;
+    --border-radius-medium: 12px;
+    --border-radius-large: 50px;
+    
+    /* Animation Variables */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Breakpoints */
+    --breakpoint-mobile: 480px;
+    --breakpoint-tablet: 768px;
+    --breakpoint-desktop: 1024px;
+    --breakpoint-large: 1400px;
+    
+    /* Z-index Scale */
+    --z-index-dropdown: 100;
+    --z-index-sticky: 200;
+    --z-index-modal: 1000;
+}
