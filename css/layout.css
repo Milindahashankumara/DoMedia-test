@@ -1,0 +1,147 @@
+/* LAYOUT STYLES - Grid, flexbox, and positioning */
+
+/* Container */
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* Header Layout */
+header {
+    padding: var(--spacing-xl) 0;
+    position: relative;
+    z-index: var(--z-index-dropdown);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Navigation Layout */
+nav {
+    display: block;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-xxl);
+    align-items: center;
+}
+
+nav.active {
+    display: block;
+}
+
+/* Hero Section Layout */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xxxl);
+    align-items: center;
+    padding: 80px 0;
+    min-height: calc(100vh - 120px);
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Laptop Mockup Layout */
+.laptop-frame {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    perspective: 1000px;
+}
+
+.laptop-showcase {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.laptop-image {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.3));
+}
+
+.laptop-screen-overlay {
+    position: absolute;
+    top: 8%;
+    left: 12%;
+    right: 12%;
+    bottom: 45%;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.laptop-screen {
+    background: #2a2a2a;
+    border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+    padding: var(--spacing-lg);
+    box-shadow: 0 20px 60px var(--shadow-heavy);
+    position: relative;
+    overflow: hidden;
+}
+
+        .screen-content {
+            background: linear-gradient(135deg, rgba(68, 87, 253, 0.3) 0%, rgba(99, 211, 227, 0.3) 100%);
+            border-radius: var(--border-radius-small);
+            padding: var(--spacing-lg);
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            backdrop-filter: blur(2px);
+        }.screen-nav {
+    position: absolute;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    display: flex;
+    gap: 15px;
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+.laptop-base {
+    background: linear-gradient(to bottom, #d0d0d0 0%, #a8a8a8 50%, #888 100%);
+    height: var(--spacing-lg);
+    border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
+    position: relative;
+    box-shadow: 0 10px 30px var(--shadow-medium);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 28px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: var(--z-index-dropdown);
+}
