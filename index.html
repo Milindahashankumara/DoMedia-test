@@ -634,13 +634,13 @@
     </div>
 
     <script>
-        // ENHANCED NAVBAR JAVASCRIPT
+       
         
         // DOM Elements
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const mainNav = document.getElementById('mainNav');
 
-        // ENHANCED MOBILE NAVIGATION
+        //enhanced mobile navigation
         mobileMenuBtn.addEventListener('click', function() {
             const isActive = mainNav.classList.contains('active');
             
@@ -654,7 +654,7 @@
             document.body.style.overflow = isActive ? 'auto' : 'hidden';
         });
 
-        // ENHANCED SMOOTH SCROLLING
+        //enhanced smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
