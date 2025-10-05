@@ -1,4 +1,4 @@
-/* LAYOUT STYLES - Grid, flexbox, and positioning */
+/* layout css  */
 
 /* Container */
 .container {
@@ -60,7 +60,7 @@ nav.active {
     align-items: center;
 }
 
-/* Laptop Mockup Layout */
+/* Laptop Layout */
 .laptop-frame {
     position: relative;
     width: 100%;
