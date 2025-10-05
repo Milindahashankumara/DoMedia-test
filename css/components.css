@@ -1,0 +1,213 @@
+/* COMPONENT STYLES - Specific UI components */
+
+/* Logo Component */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform var(--transition-normal);
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    margin-right: var(--spacing-xs);
+}
+
+.logo-icon {
+    background: var(--logo-bg);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 24px;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: -1px;
+    border-radius: 4px;
+}
+
+.logo-text {
+    font-size: 36px;
+    font-weight: var(--font-weight-light);
+    letter-spacing: 2px;
+    margin-left: var(--spacing-xs);
+}
+
+/* Navigation Links */
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    transition: all var(--transition-normal);
+    position: relative;
+    padding: var(--spacing-xs) 0;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--text-color);
+    transition: all var(--transition-normal);
+    transform: translateX(-50%);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) 36px;
+    border: 2px solid var(--button-border);
+    border-radius: var(--border-radius-large);
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: var(--font-size-base);
+    background: transparent;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: left var(--transition-slow);
+}
+
+.cta-button:hover::before {
+    left: 0;
+}
+
+.cta-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button::after {
+    content: '';
+    background-image: url('../assets/images/icons/arrow-right.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    transition: transform var(--transition-normal);
+}
+
+.cta-button:hover::after {
+    transform: translateX(3px);
+}
+
+/* Hero Content */
+.hero-content h1 {
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-light);
+    line-height: var(--line-height-heading);
+    margin-bottom: var(--spacing-xl);
+}
+
+.hero-content p {
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-base);
+    margin-bottom: var(--spacing-xxl);
+    max-width: 500px;
+    opacity: 0.95;
+}
+
+/* Laptop Screen Elements */
+.laptop-screen::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #555;
+    border-radius: 50%;
+}
+
+.screen-content h2 {
+    font-size: var(--font-size-h2);
+    font-style: italic;
+    margin-bottom: 10px;
+    font-weight: var(--font-weight-light);
+}
+
+.screen-content h3 {
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--spacing-lg);
+    font-weight: var(--font-weight-normal);
+}
+
+.screen-content p {
+    font-size: var(--font-size-small);
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.screen-button {
+    background: var(--text-color);
+    color: #333;
+    padding: 10px 24px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: var(--font-weight-medium);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+}
+
+.screen-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.laptop-base::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 6px;
+    background: #666;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Focus States */
+.cta-button:focus-visible,
+nav a:focus-visible {
+    outline: 2px solid var(--text-color);
+    outline-offset: 4px;
+}
