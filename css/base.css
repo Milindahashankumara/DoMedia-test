@@ -1,4 +1,4 @@
-/* BASE STYLES - Typography and global styles */
+/* base style */
 
 /* Font Face Declaration */
 @font-face {
@@ -94,7 +94,7 @@ button:focus-visible {
     color: var(--text-color);
 }
 
-/* Scrollbar Styling */
+/* Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
