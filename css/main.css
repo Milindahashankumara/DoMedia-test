@@ -1,0 +1,248 @@
+/* ANIMATIONS - Keyframes, transitions, and motion */
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Page Load Animations */
+.hero-content h1 {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+}
+
+.hero-content p {
+    animation: fadeInUp 0.8s ease 0.2s forwards;
+    opacity: 0;
+}
+
+.cta-button {
+    animation: fadeInUp 0.8s ease 0.4s forwards;
+    opacity: 0;
+}
+
+.laptop-frame {
+    animation: fadeInRight 0.8s ease 0.6s forwards;
+    opacity: 0;
+}
+
+.logo {
+    animation: fadeInLeft 0.6s ease forwards;
+}
+
+nav ul li {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+nav ul li:nth-child(1) { animation-delay: 0.1s; }
+nav ul li:nth-child(2) { animation-delay: 0.2s; }
+nav ul li:nth-child(3) { animation-delay: 0.3s; }
+nav ul li:nth-child(4) { animation-delay: 0.4s; }
+nav ul li:nth-child(5) { animation-delay: 0.5s; }
+
+/* Hover Animations */
+.laptop-frame:hover {
+    animation: float 3s ease-in-out infinite;
+}
+
+.logo:hover .logo-icon {
+    animation: pulse 0.6s ease;
+}
+
+.screen-button:hover {
+    animation: shimmer 1s ease infinite;
+    background: linear-gradient(
+        90deg,
+        var(--text-color) 25%,
+        rgba(255, 255, 255, 0.8) 50%,
+        var(--text-color) 75%
+    );
+    background-size: 200% 100%;
+}
+
+/* Focus Animations */
+.cta-button:focus-visible {
+    animation: pulse 0.5s ease;
+}
+
+/* Loading Animation */
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid transparent;
+    border-top: 2px solid var(--text-color);
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+}
+
+/* Scroll Animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Interactive Elements */
+.interactive {
+    transition: transform var(--transition-normal);
+}
+
+.interactive:hover {
+    transform: scale(1.02);
+}
+
+.interactive:active {
+    transform: scale(0.98);
+}
+
+/* Gradient Animation */
+.gradient-animate {
+    background: linear-gradient(
+        270deg,
+        var(--gradient-start),
+        var(--gradient-end),
+        var(--gradient-start)
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Mobile Menu Animation */
+.mobile-menu-btn {
+    transition: transform var(--transition-normal);
+}
+
+.mobile-menu-btn.active {
+    transform: rotate(90deg);
+}
+
+/* Screen Content Animations */
+.screen-content > * {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.screen-content h2:first-of-type {
+    animation-delay: 0.8s;
+}
+
+.screen-content h2:nth-of-type(2) {
+    animation-delay: 1s;
+}
+
+.screen-content h3 {
+    animation-delay: 1.2s;
+}
+
+.screen-content p {
+    animation-delay: 1.4s;
+}
+
+.screen-content button {
+    animation-delay: 1.6s;
+}
+
+/* Performance Optimizations */
+.will-animate {
+    will-change: transform, opacity;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
