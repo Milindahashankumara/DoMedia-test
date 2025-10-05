@@ -60,7 +60,7 @@
     }
 }
 
-/* Mobile Landscape and Small Tablets (768px and down) */
+/* mobile Landscape and Small Tablets (768px and down) */
 @media screen and (max-width: 768px) {
     .header-content {
         flex-wrap: wrap;
@@ -258,7 +258,7 @@
     }
 }
 
-/* Very Small Devices (360px and down) */
+/* small Devices (360px and down) */
 @media screen and (max-width: 360px) {
     .hero-content h1 {
         font-size: 32px;
@@ -273,7 +273,7 @@
     }
 }
 
-/* Landscape Orientation Adjustments */
+/* landscape Orientation Adjustments */
 @media screen and (max-height: 600px) and (orientation: landscape) {
     .hero-section {
         padding: var(--spacing-lg) 0;
@@ -289,14 +289,13 @@
     }
 }
 
-/* High DPI Displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .laptop-screen {
         box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
     }
 }
 
-/* Reduced Motion Preferences */
+/* reduced Motion Preferences */
 @media (prefers-reduced-motion: reduce) {
     * {
         animation-duration: 0.01ms !important;
@@ -305,7 +304,7 @@
     }
 }
 
-/* Animation for mobile menu */
+/* animation for mobile menu */
 @keyframes slideDown {
     from {
         opacity: 0;
