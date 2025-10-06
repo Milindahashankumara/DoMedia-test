@@ -1,0 +1,209 @@
+/* Professional Typography Enhancements */
+
+/* Advanced Text Rendering */
+* {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Professional Typography Scale */
+:root {
+    --font-scale-base: 1rem;
+    --font-scale-sm: 0.875rem;
+    --font-scale-lg: 1.125rem;
+    --font-scale-xl: 1.25rem;
+    --font-scale-2xl: 1.5rem;
+    --font-scale-3xl: 1.875rem;
+    --font-scale-4xl: 2.25rem;
+    --font-scale-5xl: 3rem;
+    --font-scale-6xl: 3.75rem;
+    
+    /* Professional Letter Spacing */
+    --letter-spacing-tight: -0.025em;
+    --letter-spacing-normal: 0em;
+    --letter-spacing-wide: 0.025em;
+    --letter-spacing-wider: 0.05em;
+    --letter-spacing-widest: 0.1em;
+    
+    /* Professional Line Heights */
+    --leading-none: 1;
+    --leading-tight: 1.25;
+    --leading-snug: 1.375;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.625;
+    --leading-loose: 2;
+}
+
+/* Enhanced Hero Typography */
+.hero-content h1 {
+    /* Advanced Typography */
+    font-variation-settings: 'wght' 200;
+    font-optical-sizing: auto;
+    
+    /* Improved Text Spacing */
+    word-spacing: -0.05em;
+    
+    /* Professional Text Shadow for Depth */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    
+    /* Better Line Breaking */
+    hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
+    
+    /* Enhanced Readability */
+    font-feature-settings: 'liga' on, 'kern' on;
+}
+
+.hero-content p {
+    /* Enhanced Paragraph Styling */
+    font-variation-settings: 'wght' 300;
+    
+    /* Improved Reading Experience */
+    orphans: 3;
+    widows: 3;
+    
+    /* Subtle Text Shadow */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    
+    /* Better Typography Features */
+    font-feature-settings: 'liga' on, 'kern' on, 'onum' on;
+    
+    /* Improved Hyphenation */
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 3;
+}
+
+/* Professional Button Typography */
+.cta-button {
+    /* Enhanced Button Text */
+    font-variation-settings: 'wght' 400;
+    font-feature-settings: 'liga' on, 'kern' on;
+    text-transform: none;
+    
+    /* Improved Button Spacing */
+    white-space: nowrap;
+    
+    /* Professional Button Shadow */
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.1),
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.cta-button:hover {
+    /* Enhanced Hover Effects */
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-1px);
+    
+    /* Improved Hover Shadow */
+    box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.15),
+        0 2px 6px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 1px 4px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Professional Focus States */
+.cta-button:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
+}
+
+/* Enhanced Navigation Typography */
+.navigation a {
+    font-variation-settings: 'wght' 400;
+    font-feature-settings: 'liga' on, 'kern' on;
+    text-transform: none;
+}
+
+/* Professional Micro-Interactions */
+.hero-content h1,
+.hero-content p,
+.cta-button {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.hero-content h1 {
+    animation-delay: 0.2s;
+}
+
+.hero-content p {
+    animation-delay: 0.4s;
+}
+
+.cta-button {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Professional Text Selection */
+::selection {
+    background: rgba(255, 255, 255, 0.2);
+    color: inherit;
+}
+
+::-moz-selection {
+    background: rgba(255, 255, 255, 0.2);
+    color: inherit;
+}
+
+/* Enhanced Mobile Typography */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        letter-spacing: -1px;
+        word-spacing: -0.03em;
+    }
+    
+    .hero-content p {
+        word-spacing: 0.05em;
+    }
+}
+
+/* High DPI Display Optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-content h1,
+    .hero-content p,
+    .cta-button {
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+}
+
+/* Dark Mode Preparation */
+@media (prefers-color-scheme: dark) {
+    .hero-content h1,
+    .hero-content p {
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .hero-content h1,
+    .hero-content p,
+    .cta-button {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+    
+    .cta-button:hover {
+        transform: none;
+    }
+}

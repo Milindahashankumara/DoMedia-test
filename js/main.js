@@ -1,11 +1,12 @@
-
-
+// DO Media Application - Main Entry Point
 class DOMediaApp {
     constructor() {
         this.modules = {
             navigation: null,
             animations: null,
-            responsiveHandler: null
+            responsiveHandler: null,
+            buttonEnhancement: null,
+            laptopEnhancement: null
         };
         
         this.state = {
@@ -88,6 +89,16 @@ class DOMediaApp {
         // Initialize Animations last (may depend on other modules)
         if (typeof Animations !== 'undefined') {
             initPromises.push(this.initModule('animations', Animations));
+        }
+
+        // Initialize Button Enhancement (independent module)
+        if (typeof ButtonEnhancer !== 'undefined') {
+            initPromises.push(this.initModule('buttonEnhancement', ButtonEnhancer));
+        }
+
+        // Initialize Laptop Enhancement (independent module)
+        if (typeof LaptopEnhancer !== 'undefined') {
+            initPromises.push(this.initModule('laptopEnhancement', LaptopEnhancer));
         }
 
         // Wait for all modules to initialize

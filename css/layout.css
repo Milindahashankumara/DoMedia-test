@@ -2,55 +2,57 @@
 
 /* Container */
 .container {
-    max-width: var(--container-max-width);
+    max-width: 100%;
     margin: 0 auto;
-    padding: 0 var(--spacing-lg);
 }
 
 /* Header Layout */
-header {
-    padding: var(--spacing-xl) 0;
-    position: relative;
-    z-index: var(--z-index-dropdown);
-}
-
-.header-content {
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    padding: 40px 100px;
+    background: transparent;
+    z-index: 100;
+    min-height: 80px;
 }
 
 /* Navigation Layout */
-nav {
-    display: block;
-}
-
-nav ul {
+.navigation {
     display: flex;
-    list-style: none;
-    gap: var(--spacing-xxl);
     align-items: center;
+    gap: 56px;
 }
 
-nav.active {
-    display: block;
+.navigation.active {
+    display: flex;
 }
 
 /* Hero Section Layout */
 .hero-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xxxl);
+    display: flex;
     align-items: center;
-    padding: 80px 0;
-    min-height: calc(100vh - 120px);
+    justify-content: space-between;
+    padding: 0 120px;
+    min-height: calc(100vh - 100px);
+    gap: 100px;
+    padding-top: 100px;
+    padding-bottom: 60px;
 }
 
+/* Hero Content Container */
 .hero-content {
+    padding-left: 60px;
+    max-width: 680px;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xl);
+    gap: clamp(24px, 3vw, 32px);
+    justify-content: center;
 }
 
 .hero-image {
@@ -64,24 +66,27 @@ nav.active {
 .laptop-frame {
     position: relative;
     width: 100%;
-    max-width: 600px;
-    perspective: 1000px;
+    max-width: 750px;
+    perspective: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .laptop-showcase {
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 750px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 30px 15px;
 }
 
 .laptop-image {
     width: 100%;
     height: auto;
-    max-width: 600px;
-    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.3));
+    max-width: 750px;
+    filter: drop-shadow(0 25px 60px rgba(0, 0, 0, 0.4));
 }
 
 .laptop-screen-overlay {

@@ -1,0 +1,294 @@
+/* Enhanced Laptop Image User Experience - Increased Size and Interactions */
+
+/* Base laptop container enhancements */
+.laptop-container {
+    position: relative;
+    transform: perspective(1500px) rotateY(-10deg) rotateX(1deg);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform;
+}
+
+.laptop-container:hover {
+    transform: perspective(1500px) rotateY(-5deg) rotateX(0deg) translateY(-10px);
+}
+
+/* Enhanced laptop image with increased size */
+.laptop-image {
+    width: 100%;
+    height: auto;
+    max-width: 700px !important; /* Increased from 500px */
+    min-width: 350px;
+    display: block;
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4));
+    transition: all 0.4s ease;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.laptop-image:hover {
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5));
+    transform: scale(1.02);
+}
+
+/* Enhanced laptop frame with increased dimensions */
+.laptop-frame {
+    position: relative;
+    width: 100%;
+    max-width: 750px !important; /* Increased from 600px */
+    perspective: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.laptop-showcase {
+    position: relative;
+    width: 100%;
+    max-width: 750px !important; /* Increased from 600px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+}
+
+/* Interactive hover effects */
+.laptop-container::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 70%
+    );
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.laptop-container:hover::before {
+    opacity: 1;
+}
+
+/* Enhanced screen overlay for better visibility */
+.laptop-screen-overlay {
+    position: absolute;
+    top: 8%;
+    left: 12%;
+    right: 12%;
+    bottom: 45%;
+    background: linear-gradient(
+        135deg,
+        rgba(68, 87, 253, 0.1) 0%,
+        rgba(99, 211, 227, 0.1) 100%
+    );
+    border-radius: 10px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced laptop screen with improved content display */
+.laptop-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(68, 87, 253, 0.05) 0%,
+        rgba(99, 211, 227, 0.05) 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Laptop base enhancement */
+.laptop-base {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(
+        to bottom,
+        rgba(150, 150, 150, 0.8),
+        rgba(100, 100, 100, 0.9)
+    );
+    border-radius: 0 0 15px 15px;
+    margin-top: -10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive enhancements for different screen sizes */
+@media (min-width: 1400px) {
+    .laptop-image {
+        max-width: 800px !important; /* Even larger on very large screens */
+    }
+    
+    .laptop-frame,
+    .laptop-showcase {
+        max-width: 850px !important;
+    }
+    
+    .laptop-container {
+        transform: perspective(1800px) rotateY(-12deg) rotateX(2deg);
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .laptop-image {
+        max-width: 750px !important;
+    }
+    
+    .laptop-frame,
+    .laptop-showcase {
+        max-width: 800px !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .laptop-image {
+        max-width: 650px !important; /* Increased from default */
+    }
+    
+    .laptop-frame,
+    .laptop-showcase {
+        max-width: 700px !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .laptop-image {
+        max-width: 580px !important; /* Increased for tablets */
+    }
+    
+    .laptop-frame,
+    .laptop-showcase {
+        max-width: 620px !important;
+    }
+    
+    .laptop-container {
+        transform: perspective(1200px) rotateY(-8deg) rotateX(1deg);
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .laptop-image {
+        max-width: 520px !important; /* Increased for small tablets */
+    }
+    
+    .laptop-frame,
+    .laptop-showcase {
+        max-width: 550px !important;
+    }
+    
+    .laptop-showcase {
+        padding: 25px 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    .laptop-image {
+        max-width: 450px !important; /* Increased for mobile */
+        min-width: 320px;
+    }
+    
+    .laptop-frame,
+    .laptop-showcase {
+        max-width: 480px !important;
+    }
+    
+    .laptop-container {
+        transform: perspective(800px) rotateY(-5deg) rotateX(0deg);
+    }
+    
+    .laptop-container:hover {
+        transform: perspective(800px) rotateY(-2deg) rotateX(0deg) translateY(-5px);
+    }
+    
+    .laptop-showcase {
+        padding: 20px 5px;
+    }
+}
+
+/* Enhanced loading animation */
+@keyframes laptopLoadIn {
+    0% {
+        opacity: 0;
+        transform: perspective(1500px) rotateY(-30deg) rotateX(10deg) translateY(50px);
+    }
+    50% {
+        opacity: 0.7;
+        transform: perspective(1500px) rotateY(-15deg) rotateX(5deg) translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: perspective(1500px) rotateY(-10deg) rotateX(1deg) translateY(0);
+    }
+}
+
+/* Apply loading animation */
+.laptop-container {
+    animation: laptopLoadIn 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Enhanced click interaction */
+.laptop-image:active {
+    transform: scale(0.98);
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+}
+
+/* Accessibility improvements */
+.laptop-container:focus-within {
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 10px;
+    border-radius: 15px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .laptop-image {
+        filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.8)) contrast(1.2);
+    }
+    
+    .laptop-screen-overlay {
+        background: rgba(0, 0, 0, 0.9);
+        border: 2px solid rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .laptop-container,
+    .laptop-image {
+        transition: none;
+        animation: none;
+    }
+    
+    .laptop-container:hover {
+        transform: perspective(1500px) rotateY(-10deg) rotateX(1deg);
+    }
+}
+
+/* Print optimization */
+@media print {
+    .laptop-container {
+        transform: none;
+        page-break-inside: avoid;
+    }
+    
+    .laptop-image {
+        max-width: 100% !important;
+        filter: none;
+    }
+}

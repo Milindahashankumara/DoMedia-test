@@ -1,32 +1,321 @@
-/* components style */
+/* Components Styles */
 
 /* Logo Component */
 .logo {
     display: flex;
     align-items: center;
-    gap: 0;
-    text-decoration: none;
-    color: var(--text-color);
-    transition: transform var(--transition-normal);
 }
 
-.logo:hover {
-    transform: scale(1.02);
-}
-
-.logo-image {
+.site-logo {
     height: 40px;
     width: auto;
-    margin-right: var(--spacing-xs);
+    max-width: 150px;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
 }
 
-.logo-icon {
-    background: var(--logo-bg);
-    padding: var(--spacing-sm) var(--spacing-md);
+.site-logo:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.2));
+}
+
+/* Professional Glassmorphism Card Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Links */
+.navigation a {
+    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: clamp(16px, 1.8vw, 18px);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.navigation a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.navigation a:active {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
+}
+
+/* Professional Navigation Indicator */
+.navigation a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ffffff, rgba(255, 255, 255, 0.5));
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navigation a:hover::after {
+    width: 80%;
+}
+
+/* Hero Content - Exact Specifications */
+.hero-content h1 {
+    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-size: clamp(44px, 5.2vw, 68px);
+    font-weight: 200;
+    line-height: 1.1;
+    color: #FFFFFF;
+    margin: 0 0 32px 0;
+    padding: 0;
+    letter-spacing: -1.2px;
+    text-align: left;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-content p {
+    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    font-size: clamp(17px, 2.2vw, 21px);
+    font-weight: 300;
+    line-height: 1.65;
+    color: #FFFFFF;
+    opacity: 0.92;
+    margin: 0 0 42px 0;
+    padding: 0;
+    letter-spacing: 0.2px;
+    text-align: left;
+    max-width: 620px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    word-spacing: 0.1em;
+}
+
+/* Enhanced Visible CTA Button */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(255, 255, 255, 0.1) inset;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    min-height: 48px;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button span,
+.cta-button .arrow {
+    position: relative;
+    z-index: 2;
+}
+
+.cta-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(255, 255, 255, 0.15) inset;
+    transform: translateY(-3px) scale(1.02);
+}
+
+.cta-button:active {
+    transform: translateY(0px);
+    transition: transform 0.15s;
+}
+
+.cta-button:focus {
+    outline: none;
+    box-shadow: 0 4px 16px rgba(68, 87, 253, 0.2), 
+                0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+.arrow {
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    z-index: 2;
+}
+
+.arrow::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: rotate(-45deg);
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+}
+
+.cta-button:hover .arrow::after {
+    transform: rotate(-45deg) translateX(3px);
+    border-right-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+/* Professional Button Pulse Effect */
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    animation: pulse 2s infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0; }
+    50% { transform: scale(1.05); opacity: 0.3; }
+    100% { transform: scale(1.1); opacity: 0; }
+}
+
+/* Hero Mockup */
+.hero-mockup {
+    flex: 1;
+    max-width: 680px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Laptop styling moved to laptop-enhancement.css */
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
     font-size: 24px;
-    font-weight: var(--font-weight-bold);
-    letter-spacing: -1px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 8px;
+    transition: opacity 0.3s ease;
     border-radius: 4px;
+}
+
+.mobile-menu-btn:hover {
+    opacity: 0.8;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+    border-radius: 1px;
+}
+
+.mobile-menu-btn.active .menu-icon:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-btn.active .menu-icon:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active .menu-icon:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.cta-button:focus {
+    outline: 3px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 3px;
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.cta-button:active {
+    transform: translateY(-1px) scale(1.01);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.25);
+    transition: all 0.15s ease;
+}
+
+.arrow {
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* Hero Mockup */
+.hero-mockup {
+    flex: 1;
+    max-width: 680px;
+}
+
+/* Duplicate laptop styling removed - see laptop-enhancement.css */
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 8px;
+    transition: opacity 0.3s ease;
+    border-radius: 4px;
+}
+
+.mobile-menu-btn:hover {
+    opacity: 0.8;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .logo-text {
@@ -68,22 +357,7 @@ nav a:hover::after {
 }
 
 /*Button */
-.cta-button {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-md) 36px;
-    border: 2px solid var(--button-border);
-    border-radius: var(--border-radius-large);
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: var(--font-size-base);
-    background: transparent;
-    transition: all var(--transition-normal);
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
+/* Duplicate button styles removed - using main definition above */
 
 .cta-button::before {
     content: '';
@@ -100,43 +374,9 @@ nav a:hover::after {
     left: 0;
 }
 
-.cta-button:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
+/* Duplicate button styles removed - using main button definition */
 
-.cta-button::after {
-    content: '';
-    background-image: url('../assets/images/icons/arrow-right.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    transition: transform var(--transition-normal);
-}
-
-.cta-button:hover::after {
-    transform: translateX(3px);
-}
-
-/* Hero Content */
-.hero-content h1 {
-    font-size: var(--font-size-h1);
-    font-weight: var(--font-weight-light);
-    line-height: var(--line-height-heading);
-    margin-bottom: var(--spacing-xl);
-}
-
-.hero-content p {
-    font-size: var(--font-size-large);
-    line-height: var(--line-height-base);
-    margin-bottom: var(--spacing-xxl);
-    max-width: 500px;
-    opacity: 0.95;
-}
+/* Duplicate hero styles removed - using main definitions above */
 
 /* Laptop Screen Elements */
 .laptop-screen::before {

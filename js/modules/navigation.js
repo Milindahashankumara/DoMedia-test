@@ -126,7 +126,7 @@ const Navigation = {
         Helpers.addClass(this.elements.mobileMenuBtn, 'active');
         
         // Update button text
-        this.elements.mobileMenuBtn.textContent = '✕';
+        this.elements.mobileMenuBtn.classList.add('active');
         this.elements.mobileMenuBtn.setAttribute('aria-expanded', 'true');
         
         // Focus management
@@ -151,7 +151,7 @@ const Navigation = {
         Helpers.removeClass(this.elements.mobileMenuBtn, 'active');
         
         // Update button text
-        this.elements.mobileMenuBtn.textContent = '☰';
+        this.elements.mobileMenuBtn.classList.remove('active');
         this.elements.mobileMenuBtn.setAttribute('aria-expanded', 'false');
         
         // Dispatch event
