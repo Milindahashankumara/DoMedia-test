@@ -1,0 +1,196 @@
+/* Enhanced Button Visibility and User Experience */
+
+/* Additional CTA Button Enhancements */
+.cta-button {
+    /* Enhanced visibility */
+    background: rgba(255, 255, 255, 0.2) !important;
+    border: 2px solid rgba(255, 255, 255, 0.4) !important;
+    
+    /* Better contrast and readability */
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+    
+    /* Enhanced interaction feedback */
+    transform: translateZ(0);
+    will-change: transform, background, border-color, box-shadow;
+    
+    /* Improved accessibility */
+    min-width: 140px;
+    
+    /* Subtle pulsing animation to draw attention */
+    animation: subtlePulse 3s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+    0%, 100% { 
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(255, 255, 255, 0.1) inset;
+    }
+    50% { 
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+}
+
+/* Enhanced hover state for better visibility */
+.cta-button:hover {
+    background: rgba(255, 255, 255, 0.3) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 4px 15px rgba(255, 255, 255, 0.2) inset !important;
+    animation: none; /* Stop pulsing on hover */
+}
+
+/* Enhanced focus state for accessibility */
+.cta-button:focus,
+.cta-button:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.8) !important;
+    outline-offset: 3px !important;
+    background: rgba(255, 255, 255, 0.28) !important;
+    animation: none; /* Stop pulsing on focus */
+}
+
+/* Enhanced active state */
+.cta-button:active {
+    background: rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-1px) scale(1.01) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Enhanced shimmer effect visibility */
+.cta-button::before {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent) !important;
+}
+
+/* Better arrow visibility */
+.cta-button .arrow::after {
+    border-right: 2px solid #ffffff !important;
+    border-bottom: 2px solid #ffffff !important;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4)) !important;
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .cta-button {
+        min-height: 50px !important;
+        padding: 18px 38px !important;
+        background: rgba(255, 255, 255, 0.25) !important;
+        border-width: 2px !important;
+        font-size: 16px !important;
+        
+        /* More prominent shadow for touch devices */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), 0 3px 10px rgba(255, 255, 255, 0.15) inset !important;
+    }
+    
+    .cta-button:active {
+        background: rgba(255, 255, 255, 0.35) !important;
+        transform: scale(0.98) !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .cta-button {
+        background: rgba(255, 255, 255, 0.4) !important;
+        border: 3px solid rgba(255, 255, 255, 0.8) !important;
+        color: #ffffff !important;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
+    }
+    
+    .cta-button:hover {
+        background: rgba(255, 255, 255, 0.5) !important;
+        border-color: rgba(255, 255, 255, 0.9) !important;
+    }
+}
+
+/* Reduced motion support while maintaining visibility */
+@media (prefers-reduced-motion: reduce) {
+    .cta-button {
+        animation: none !important;
+        transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+    }
+}
+
+/* Dark theme enhancements */
+@media (prefers-color-scheme: dark) {
+    .cta-button {
+        background: rgba(255, 255, 255, 0.15) !important;
+        border-color: rgba(255, 255, 255, 0.5) !important;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(255, 255, 255, 0.1) inset !important;
+    }
+    
+    .cta-button:hover {
+        background: rgba(255, 255, 255, 0.25) !important;
+        border-color: rgba(255, 255, 255, 0.7) !important;
+    }
+}
+
+/* Print media - ensure button is visible when printed */
+@media print {
+    .cta-button {
+        background: rgba(0, 0, 0, 0.1) !important;
+        border: 2px solid rgba(0, 0, 0, 0.3) !important;
+        color: #000000 !important;
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
+}
+
+/* Specific screen size optimizations */
+@media (min-width: 1200px) {
+    .cta-button {
+        padding: 18px 36px !important;
+        font-size: 17px !important;
+        min-height: 52px !important;
+        background: rgba(255, 255, 255, 0.18) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-button {
+        padding: 16px 32px !important;
+        font-size: 16px !important;
+        min-height: 48px !important;
+        background: rgba(255, 255, 255, 0.3) !important;
+        border-width: 2px !important;
+        
+        /* More prominent on small screens */
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3), 0 3px 12px rgba(255, 255, 255, 0.2) inset !important;
+    }
+}
+
+/* Keyboard focus enhancements */
+.cta-button.keyboard-focused {
+    background: rgba(255, 255, 255, 0.35) !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    box-shadow: 
+        0 0 0 3px rgba(255, 255, 255, 0.4),
+        0 6px 25px rgba(0, 0, 0, 0.3),
+        0 4px 15px rgba(255, 255, 255, 0.2) inset !important;
+    outline: none !important;
+}
+
+/* Touch active state */
+.cta-button.touch-active {
+    transform: scale(0.98) !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Screen reader only content */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Enhanced high contrast mode support */
+@media (prefers-contrast: high) {
+    .cta-button.keyboard-focused {
+        box-shadow: 
+            0 0 0 4px rgba(255, 255, 255, 0.8),
+            0 8px 30px rgba(0, 0, 0, 0.5) !important;
+    }
+}
