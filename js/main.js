@@ -1,7 +1,4 @@
-/**
- * Main JavaScript Entry Point
- * Initializes and coordinates all modules
- */
+
 
 class DOMediaApp {
     constructor() {
@@ -23,12 +20,12 @@ class DOMediaApp {
         };
     }
 
-    /**
-     * Initialize the application
-     */
+
+      // Initialize the application
+    
     async init() {
         try {
-            console.log('🚀 Initializing DO Media Website...');
+            console.log('Initializing DO Media Website...');
             
             // Wait for DOM to be ready
             await this.waitForDOM();
@@ -42,17 +39,17 @@ class DOMediaApp {
             // Mark app as loaded
             this.handleLoadComplete();
             
-            console.log('✅ DO Media Website initialized successfully');
+            console.log('DO Media Website initialized successfully');
             
         } catch (error) {
-            console.error('❌ Failed to initialize DO Media Website:', error);
+            console.error('Failed to initialize DO Media Website:', error);
             this.handleError(error);
         }
     }
 
-    /**
-     * Wait for DOM to be ready
-     */
+    
+     // Wait for DOM to be ready
+    
     waitForDOM() {
         return new Promise((resolve) => {
             if (document.readyState === 'loading') {
@@ -63,19 +60,19 @@ class DOMediaApp {
         });
     }
 
-    /**
-     * Initialize all modules
-     */
+    
+     // Initialize all modules
+    
     async initializeModules() {
         const initPromises = [];
 
         // Initialize ViewportUtils and Helpers (these are synchronous)
         if (typeof ViewportUtils !== 'undefined') {
-            console.log('📏 ViewportUtils ready');
+            console.log('ViewportUtils ready');
         }
         
         if (typeof Helpers !== 'undefined') {
-            console.log('🔧 Helpers ready');
+            console.log('Helpers ready');
         }
 
         // Initialize ResponsiveHandler first (other modules may depend on it)
@@ -97,29 +94,29 @@ class DOMediaApp {
         await Promise.all(initPromises);
     }
 
-    /**
-     * Initialize individual module
-     */
+    
+     // Initialize individual module
+    
     async initModule(name, module) {
         try {
-            console.log(`🔄 Initializing ${name}...`);
+            console.log(`Initializing ${name}...`);
             
             if (typeof module.init === 'function') {
                 await module.init();
                 this.modules[name] = module;
-                console.log(`✅ ${name} initialized`);
+                console.log(`${name} initialized`);
             } else {
-                console.warn(`⚠️ ${name} module has no init method`);
+                console.warn(`${name} module has no init method`);
             }
         } catch (error) {
-            console.error(`❌ Failed to initialize ${name}:`, error);
+            console.error(`Failed to initialize ${name}:`, error);
             throw error;
         }
     }
 
-    /**
-     * Set up global event handlers
-     */
+    
+     // Set up global event handlers
+    
     setupGlobalEvents() {
         // Handle page visibility changes
         document.addEventListener('visibilitychange', () => {
@@ -151,12 +148,12 @@ class DOMediaApp {
             this.setupPerformanceMonitoring();
         }
 
-        console.log('🎯 Global event handlers set up');
+        console.log(' Global event handlers set up');
     }
 
-    /**
-     * Handle load complete
-     */
+    
+     // Handle load complete
+    
     handleLoadComplete() {
         this.state.isLoaded = true;
         this.state.isInitialized = true;
@@ -177,9 +174,9 @@ class DOMediaApp {
         this.runPostLoadOptimizations();
     }
 
-    /**
-     * Handle visibility change
-     */
+    
+     // Handle visibility change
+    
     handleVisibilityChange() {
         if (document.hidden) {
             // Page is hidden - pause expensive operations
@@ -190,33 +187,33 @@ class DOMediaApp {
         }
     }
 
-    /**
-     * Pause expensive operations
-     */
+    
+     // Pause expensive operations
+    
     pauseExpensiveOperations() {
         if (this.modules.animations && typeof this.modules.animations.pauseAnimations === 'function') {
             this.modules.animations.pauseAnimations();
         }
         
-        console.log('⏸️ Paused expensive operations');
+        console.log(' Paused expensive operations');
     }
 
-    /**
-     * Resume expensive operations
-     */
+    
+     // Resume expensive operations
+    
     resumeExpensiveOperations() {
         if (this.modules.animations && typeof this.modules.animations.resumeAnimations === 'function') {
             this.modules.animations.resumeAnimations();
         }
         
-        console.log('▶️ Resumed expensive operations');
+        console.log(' Resumed expensive operations');
     }
 
-    /**
-     * Handle application unload
-     */
+    
+     // Handle application unload
+    
     handleUnload() {
-        console.log('🛑 Application unloading...');
+        console.log('Application unloading...');
         
         // Cleanup modules
         Object.values(this.modules).forEach(module => {
@@ -230,9 +227,9 @@ class DOMediaApp {
         });
     }
 
-    /**
-     * Handle application errors
-     */
+    
+     // Handle application errors
+    
     handleError(error) {
         console.error('Application error:', error);
         
@@ -245,17 +242,17 @@ class DOMediaApp {
         this.reportError(error);
     }
 
-    /**
-     * Handle global JavaScript errors
-     */
+    
+     // Handle global JavaScript errors
+    
     handleGlobalError(error) {
         console.error('Global error:', error);
         this.handleError(error);
     }
 
-    /**
-     * Show error message to user
-     */
+    
+     // Show error message to user
+    
     showErrorMessage() {
         // Create error notification (simple implementation)
         const errorDiv = document.createElement('div');
@@ -308,20 +305,18 @@ class DOMediaApp {
         
         console.log('Error report:', errorReport);
         
-        // Example: Send to analytics service
-        // analytics.track('JavaScript Error', errorReport);
     }
 
-    /**
-     * Set up performance monitoring
-     */
+    
+     // Set up performance monitoring
+    
     setupPerformanceMonitoring() {
         // Monitor page load performance
         window.addEventListener('load', () => {
             setTimeout(() => {
                 const perfData = performance.getEntriesByType('navigation')[0];
                 if (perfData) {
-                    console.log('📊 Performance metrics:', {
+                    console.log('Performance metrics:', {
                         loadTime: Math.round(perfData.loadEventEnd - perfData.fetchStart),
                         domContentLoaded: Math.round(perfData.domContentLoadedEventEnd - perfData.fetchStart),
                         domComplete: Math.round(perfData.domComplete - perfData.fetchStart)
@@ -335,15 +330,15 @@ class DOMediaApp {
             setInterval(() => {
                 const memory = performance.memory;
                 if (memory.usedJSHeapSize / memory.totalJSHeapSize > 0.9) {
-                    console.warn('⚠️ High memory usage detected');
+                    console.warn(' High memory usage detected');
                 }
             }, 30000); // Check every 30 seconds
         }
     }
 
-    /**
-     * Run post-load optimizations
-     */
+    
+     // Run post-load optimizations
+    
     runPostLoadOptimizations() {
         // Preload critical assets
         this.preloadCriticalAssets();
@@ -354,12 +349,12 @@ class DOMediaApp {
         // Clean up unused CSS
         this.cleanupUnusedStyles();
         
-        console.log('🔧 Post-load optimizations completed');
+        console.log(' Post-load optimizations completed');
     }
 
-    /**
-     * Preload critical assets
-     */
+    
+     // Preload critical assets
+    
     preloadCriticalAssets() {
         // Preload fonts if not already loaded
         const fontPreloads = [
@@ -378,9 +373,9 @@ class DOMediaApp {
         });
     }
 
-    /**
-     * Optimize images
-     */
+    
+     // Optimize images
+    
     optimizeImages() {
         const images = document.querySelectorAll('img');
         images.forEach(img => {
@@ -390,18 +385,18 @@ class DOMediaApp {
         });
     }
 
-    /**
-     * Clean up unused styles
-     */
+    
+     //Clean up unused styles
+    
     cleanupUnusedStyles() {
         // Remove any development-only styles
         const devStyles = document.querySelectorAll('style[data-dev], link[data-dev]');
         devStyles.forEach(style => style.remove());
     }
 
-    /**
-     * Get application state
-     */
+    
+     // Get application state
+    
     getState() {
         return {
             ...this.state,
